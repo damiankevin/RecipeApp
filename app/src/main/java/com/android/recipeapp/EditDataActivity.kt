@@ -1,11 +1,17 @@
 package com.android.recipeapp
 
+import android.graphics.Bitmap
+import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.bumptech.glide.request.RequestOptions
+import com.bumptech.glide.request.target.SimpleTarget
 import kotlinx.android.synthetic.main.activity_edit_data.*
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -60,6 +66,7 @@ class EditDataActivity : AppCompatActivity() {
                 Toast.makeText(baseContext,"Success update",Toast.LENGTH_SHORT).show()
             }
         }
+
     }
 
     private fun passDataIntent() {
@@ -80,6 +87,15 @@ class EditDataActivity : AppCompatActivity() {
         selectedIngredient = receivedIntent.getStringExtra("recipe")
         selectedStep = receivedIntent.getStringExtra("step")
         selectedUrl = receivedIntent.getStringExtra("url")
+
+        Glide.with(this)
+            .load(selectedUrl)
+            .apply(
+                RequestOptions.bitmapTransform(RoundedCorners(25)).placeholder(
+                    this.resources.getDrawable(R.drawable.food_logo)
+                )
+            )
+            .into(civEditLogo)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

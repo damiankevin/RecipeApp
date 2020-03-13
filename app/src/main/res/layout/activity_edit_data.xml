@@ -33,7 +33,7 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_gravity="center"
-                android:id="@+id/civLogo"
+                android:id="@+id/civEditLogo"
                 android:layout_width="104dp"
                 android:layout_height="104dp"
                 android:layout_centerHorizontal="true"
