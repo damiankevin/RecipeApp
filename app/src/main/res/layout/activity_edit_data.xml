@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarEditData"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#295D97"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            android:theme="@style/ToolBarStyle"
+
+            />
+
+
+
+    <ScrollView
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_gravity="center"
+                android:id="@+id/civLogo"
+                android:layout_width="104dp"
+                android:layout_height="104dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="11dp"
+                android:src="@drawable/food_logo" />
+            <EditText
+                android:hint="Recipe"
+                android:layout_margin="20dp"
+                android:id="@+id/etEditName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></EditText>
+
+            <EditText
+                android:layout_margin="20dp"
+                android:hint="Ingredient"
+                android:id="@+id/etEditRecipe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></EditText>
+
+            <EditText
+                android:layout_margin="20dp"
+                android:hint="Step"
+                android:id="@+id/etEditStep"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></EditText>
+
+            <EditText
+                android:layout_margin="20dp"
+                android:hint="Url"
+                android:id="@+id/etEditUrlImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></EditText>
+
+            <LinearLayout
+                android:layout_margin="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_weight="0.5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:background="@drawable/shape_button"
+                        android:textColor="#ffffff"
+                        android:text="DELETE"
+                        android:id="@+id/btnEditDelete"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"></Button>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="0.5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:textColor="#ffffff"
+                        android:background="@drawable/shape_button"
+                        android:text="Update Data"
+                        android:id="@+id/btnEditSave"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"></Button>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
